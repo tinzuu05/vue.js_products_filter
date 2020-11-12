@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
+html, body, #app {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+html {
+    color: #232931;
+    background-color: #eeeeee;
+    font-family: 'Roboto Slab', serif;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1600025282013-b9c97cbe5f32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+#app {
+    position: absolute;
+    white-space: nowrap;
+}
+
+#app > .prev {
+    text-indent: -100%;
+    right: 0;
+}
+
+#app > .next {
+    text-indent: 100%;
+    right: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+h1, .input {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #232931;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.input > * {
+    font-size: 30px;
+    height: 100%;
+    outline: 0;
+    border: 0;
+    margin: 0;
+    padding: 5px 2.5%;
+}
+
+.input > select {
+    box-sizing: border-box;
+    width: 250px;
+    border-top: 1px solid white;
+}
+
+.menu {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius:  10px;
+}
+
+.menu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.menuItem {
+    float: left;
+    width: 50%;
+    margin: 5px 0;
+}
+
+.menuItem > * {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menuItem > .number {
+    width: 30px;
+    color: #ffffff;
+    background-color: #34495e;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.menuItem > .type {
+    font-size: 14px;
+    letter-spacing: 5px;
+    padding: 0 5px 0 10px;
+    margin: 0 5px;
+    color: #34495e;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.menuItem > .number + .type {
+    margin: 0 10px 0 0;
+    border-radius: 0 10px 10px 0;
+}
+  
+.menuItem > .title {
+    display: inline-block;
+    line-height: 30px;
+    text-decoration: none;
+    color: #34495e;
+    font-weight: 800;
+}
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/products_filter.css">
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <div class="container">
+                <div class="title">
+                    <div class="input">
+                        <select v-model="input.type">
+                            <option>ALL</option>
+                            <option>SELECTION</option>
+                            <option>WOMAN</option>
+                            <option>MAN</option>
+                            <option>BABY</option>
+                        </select>
+                        <input type="text" v-model.trim="input.title">
+                    </div>
+                    <div class="menu">
+                        <div class="menuItem" v-for="(item, index) in titleMenu">
+                            <span class="number">{{ index + 1 }}</span>
+                            <span class="type">{{item.type}}</span>
+                            <a :href="item.link" class="title">
+                                {{ item.title }}
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script>
+        let data = {
+            input: {
+                type: 'ALL',
+                title: ''
+            },
+            menu: [
+                {
+                    type: 'SELECTION',
+                    title: 'CAPTURE TOTALE DISCOVERY SET',
+                    link: '#'
+                },
+                {
+                    type: 'SELECTION',
+                    title: 'B23 HIGH-TOP SNEAKER',
+                    link: '#'
+                },
+                {
+                    type: 'WOMAN',
+                    title: 'GOLDEN NIGHTS LIMITED EDITION',
+                    link: '#'
+                },
+                {
+                    type: 'SELECTION',
+                    title: 'OUD ISPAHAN',
+                    link: '#'
+                },
+                {
+                    type: 'WOMAN',
+                    title: 'J’ADORE EAU DE PARFUM INFINISSIME',
+                    link: '#'
+                },
+                {
+                    type: 'WOMAN',
+                    title: 'CAPTURE TOTALE DISCOVERY SET',
+                    link: '#'
+                },
+                {
+                    type: 'WOMAN',
+                    title: 'DIOR CHEZ MOI',
+                    link: '#'
+                },
+                {
+                    type: 'MAN',
+                    title: 'MESSENGER POUCH',
+                    link: '#'
+                },
+                {
+                    type: 'BABY',
+                    title: 'HOODED SWEATSHIRT',
+                    link: '#'
+                },
+                {
+                    type: 'BABY',
+                    title: 'BEANIE',
+                    link: '#'
+                },
+            ],
+
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: data,
+            computed: {
+                typeMenu() {
+                    if (this.input.type !== 'ALL') {
+                        return this.menu.filter(item => {
+                            return item.type === this.input.type
+                        })
+                    } else {
+                        return this.menu
+                    }
+                },
+                
+                titleMenu() {
+                    if (this.input.title){
+                        return this.typeMenu.filter(item => {
+                            let content = item.title.toLowerCase()
+                            let keyword = this.input.title.toLowerCase()
+                            return (
+                                content.indexOf(keyword) !== -1
+                            )
+                        })
+                    } else {
+                        return this.typeMenu
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
+
+
+<!-- https://codepen.io/achen224/pen/PXmQqv?editors=0010 -->
+
+<!-- https://www.dior.com/en_gb -->

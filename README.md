@@ -10,4 +10,4 @@
 <p>Step5. 可進一步輸入任意大小寫字母，搜尋符合關鍵字的商品</p>
 
 
-<p>DEMO請參考- https://codepen.io/tinzuu05/pen/OJXrvZP，僅作練習使用，謝謝。</p>
+<p>DEMO請參考- https://codepen.io/tinzuu05/pen/OJXrvZP ，僅作練習使用，謝謝。</p>
